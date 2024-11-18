@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="vivekreddy"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-11-03 02:37:09 PM"/>
+        <attribute name="created" value="dml2ZWtyZWRkeTtNQUNCT09LQUlSOzIwMjQtMTEtMDM7MTA6MjE6MzkgQU07MzA3MQ=="/>
+        <attribute name="edited" value="dml2ZWtyZWRkeTtNQUNCT09LQUlSOzIwMjQtMTEtMDM7MDI6Mzc6MDkgUE07MTc7MzI1NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="continueLoop" type="String" array="False" size=""/>
+            <output expression="&quot;Do you want to continue? (Yes/No): &quot;" newline="True"/>
+            <input variable="continueLoop"/>
+            <if expression="continueLoop == &quot;Yes&quot;">
+                <then>
+                    <declare name="totalDiscount" type="Integer" array="False" size=""/>
+                    <assign variable="totalDiscount" expression="0"/>
+                    <while expression="continueLoop == &quot;Yes&quot;">
+                        <declare name="quantity" type="Integer" array="False" size=""/>
+                        <output expression="&quot;Enter the quantity: &quot;" newline="True"/>
+                        <input variable="quantity"/>
+                        <declare name="price" type="Real" array="False" size=""/>
+                        <output expression="&quot;Enter the price: &quot;" newline="True"/>
+                        <input variable="price"/>
+                        <declare name="extendedPrice" type="Real" array="False" size=""/>
+                        <assign variable="extendedPrice" expression="quantity * price"/>
+                        <declare name="discountPercent" type="Real" array="False" size=""/>
+                        <if expression="extendedPrice &gt; 10000.00">
+                            <then>
+                                <assign variable="discountPercent" expression="0.25"/>
+                            </then>
+                            <else>
+                                <assign variable="discountPercent" expression="0.10"/>
+                            </else>
+                        </if>
+                        <declare name="discountAmount" type="Real" array="False" size=""/>
+                        <assign variable="discountAmount" expression="extendedPrice * discountPercent"/>
+                        <declare name="total" type="Real" array="False" size=""/>
+                        <assign variable="total" expression="extendedPrice - discountPercent"/>
+                        <output expression="&quot;Extended Price:&quot; &amp;extendedPrice" newline="True"/>
+                        <output expression="&quot;Discount Amount:&quot; &amp;discountAmount" newline="True"/>
+                        <output expression="&quot;Total:&quot; &amp;total" newline="True"/>
+                        <assign variable="totalDiscount" expression="totalDiscount + discountAmount"/>
+                        <output expression="&quot;Do you want to continue? (Yes/No): &quot;" newline="True"/>
+                        <input variable="continueLoop"/>
+                    </while>
+                    <output expression="&quot;Total Discount:&quot; &amp;totalDiscount" newline="True"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

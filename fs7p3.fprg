@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="vivekreddy"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-11-03 09:46:20 AM"/>
+        <attribute name="created" value="dml2ZWtyZWRkeTtNQUNCT09LQUlSOzIwMjQtMTEtMDM7MDk6Mzg6MDEgQU07MzA3Ng=="/>
+        <attribute name="edited" value="dml2ZWtyZWRkeTtNQUNCT09LQUlSOzIwMjQtMTEtMDM7MDk6NDY6MjAgQU07NzszMTkw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="response" type="String" array="False" size=""/>
+            <output expression="&quot;Do you want to run this program? Enter 'Yes' to continue: &quot;" newline="True"/>
+            <input variable="response"/>
+            <declare name="count" type="Integer" array="False" size=""/>
+            <assign variable="count" expression="0"/>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="exam1" type="Integer" array="False" size=""/>
+            <declare name="exam2" type="Integer" array="False" size=""/>
+            <declare name="average" type="Integer" array="False" size=""/>
+            <while expression="response = &quot;Yes&quot;">
+                <output expression="&quot;Enter last name: &quot;" newline="True"/>
+                <input variable="lastName"/>
+                <output expression="&quot;Enter the first exam score: &quot;" newline="True"/>
+                <input variable="exam1"/>
+                <output expression="&quot;Enter the second exam score: &quot;" newline="True"/>
+                <input variable="exam2"/>
+                <assign variable="average" expression="(exam1 + exam2) / 2"/>
+                <output expression="lastName &amp; &quot;:&quot; &amp; average" newline="True"/>
+                <assign variable="count" expression="count + 1"/>
+                <output expression="&quot;Do you want to run this program again? Enter 'Yes' to continue: &quot;" newline="True"/>
+                <input variable="response"/>
+            </while>
+            <output expression="&quot;Number of students processed: &quot; &amp;count" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
